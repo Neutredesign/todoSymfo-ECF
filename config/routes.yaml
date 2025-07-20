@@ -1,0 +1,22 @@
+controllers:
+<<<<<<< HEAD
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+# http://localhost:8000/
+# https://m2iformation.fr/
+    # default_home:
+    # path: /
+    # controller: App\Controller\DefaultController::home
+
+# http://localhost:8000/contact
+# https://m2iformation.fr/contact
+    # default_contact:
+    # path: /contact
+    # controller: App\Controller\DefaultController::contact
+=======
+    resource: ../src/Controller/
+    type: attribute
+>>>>>>> 78136c9 (Upload projet ECF Symfony)

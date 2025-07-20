@@ -1,0 +1,21 @@
+<div class="mb-4 col-md-4 col-sm-6">
+    <div class="card shadow-sm">
+        <img src="{{ post.image }}" alt="{{ post.title }}">
+        <div class="card-body">
+            <h5 class="card-title">
+                {{ post.title }}
+            </h5>
+            <small class="text-muted">
+                Rédigé par {{ post.user.firstname }}
+            </small>
+            <a href="{{ path('default_post', {
+                'categorySlug' : post.category.slug,
+                'postSlug' : post.slug,
+                'id' : post.id,
+            }) }}"
+               class="btn mt-4 w-100 btn-outline-primary">
+                Lire la suite
+            </a>
+        </div>
+    </div>
+</div>

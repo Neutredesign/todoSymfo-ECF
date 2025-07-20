@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01-VAR-DUMPER</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="introduction-à-symfony">Introduction à Symfony</h1>
+<h2 id="composer">Composer</h2>
+<h3 id="présentation">Présentation</h3>
+<blockquote>
+<p>Site Internet : <a href="https://getcomposer.org/">https://getcomposer.org/</a><br>
+Téléchargement : <a href="https://getcomposer.org/Composer-Setup.exe">https://getcomposer.org/Composer-Setup.exe</a></p>
+</blockquote>
+<p>Composer est un gestionnaire de dépendance qui vous permettra de définir les différentes dépendances pour votre projet. Composer utilise un fichier composer.json qui contient plusieurs informations sur le projet dont la liste des librairies utilisées. Il est ensuite capable de télécharger automatiquement ces librairies (et les dépendances associées) et de générer un autoloader pour les utiliser simplement dans vos projets PHP.</p>
+<h3 id="packagist">Packagist</h3>
+<blockquote>
+<p>Site Internet : <a href="https://packagist.org/">https://packagist.org/</a><br>
+Exemple : <a href="https://packagist.org/packages/symfony/var-dumper">https://packagist.org/packages/symfony/var-dumper</a></p>
+</blockquote>
+<p>Packagist est le repository principal de Composer. Il intègre des packages public installable à partir de Composer.</p>
+<h3 id="installation-de-vardumper-avec-composer">Installation de VarDumper avec composer</h3>
+<p>Il existe plus d’une cinquantaine de composants Symfony.<br>
+Vous pouvez les utiliser individuellement ou ensemble dansDifférence entre Bundle / Package et Recipe ?</p>
+<h3 id="installation-de-vardumper">Installation de VarDumper</h3>
+<p>Les composants de Symfony.</p>
+<p>Il sont donc modulables. et c’est génial !<br>
+Je peux donc les utiliser en dehors du framework pour mes projets en PHP…</p>
+<p>Prenons le cas du composant <em>VarDumper</em> :<br>
+<a href="https://symfony.com/doc/current/components/var_dumper.html">https://symfony.com/doc/current/components/var_dumper.html</a></p>
+<p><strong>Dans notre dossier projet exécutons la commande suivante :</strong></p>
+<pre><code>composer require symfony/var-dumper
+</code></pre>
+<p>Nous observons un nouveau dossier et deux nouveaux fichiers :</p>
+<ul>
+<li>vendor/</li>
+<li>composer.json</li>
+<li>composer.lock</li>
+</ul>
+<p><strong>composer.json</strong> : Le rôle principal du fichier  est de stocker la configuration des paquets à installer ainsi que leurs contraintes de version</p>
+<p><strong>composer.lock</strong> : Le rôle de ce fichier est de stocker les versions des paquets qui ont été installés lors de l’appel à la commande “composer install”.</p>
+<p>L’objectif de ce fichier est de conserver les mêmes versions des paquets lors d’un déploiement de l’application ou lors de la récupération du projet par un collègue.</p>
+<p>Cela permet d’éviter tous les effets de bord possible lié au changement de version d’un composant.</p>
+<p><strong>Voyons comment l’utiliser :</strong></p>
+<p>Créons maintenant un nouveau fichier <code>index.php</code> avec le code suivant :</p>
+<pre><code>&lt;?php
+
+// Activer l'autochargement des classes.
+// Ainsi, plus besoin de faire de require.
+require('vendor/autoload.php');
+
+// Déclaration de variables
+$string = "Je suis en string";
+$array = [1, 2, 3, 4];
+$datetime = new  Datetime();
+$bool = true;
+
+// Debuggage avec var_dump ou print_r
+
+dump($string);
+dump($array);
+dump($bool);
+dump($datetime);
+</code></pre>
+<p>Que pouvez-vous constater ?<br>
+<strong>Ce composant va nous faciliter la vie en terme de debuggage !</strong></p>
+<blockquote>
+<p>NOTA BENE Grâce au mécanisme d’autoload de composer, nous n’avons plus besoin d’importer nos classes manuellement. Plus de requiere et autre include…</p>
+</blockquote>
+<p>Vous pouvez utiliser n’importe quels composants symfony dans vos projets de la même façon !</p>
+<p>Vive Composer, Vive Symfony et Vive la France<br>
+<em>Trêve de flagornerie, passons aux choses sérieuses !</em></p>
+<p>Written with ❤️ by <a href="https://github.com/hugoliegeard">Hugo LIEGEARD</a>.</p>
+</div>
+</body>
+
+</html>
