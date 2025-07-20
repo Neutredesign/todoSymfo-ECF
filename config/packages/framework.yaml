@@ -1,14 +1,6 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
     secret: '%env(APP_SECRET)%'
-<<<<<<< HEAD
-
-    # Note that the session will be started ONLY if you read or write from it.
-    session: true
-
-    #esi: true
-    #fragments: true
-=======
     csrf_protection: true
     http_method_override: false
 
@@ -36,18 +28,14 @@ framework:
     # Configuration des formulaires et de la validation
     form: true
     validation: { enable_annotations: true }
->>>>>>> 78136c9 (Upload projet ECF Symfony)
 
 when@test:
     framework:
         test: true
         session:
             storage_factory_id: session.storage.factory.mock_file
-<<<<<<< HEAD
-=======
 
 when@dev:
     framework:
         router:
             strict_requirements: true
->>>>>>> 78136c9 (Upload projet ECF Symfony)
