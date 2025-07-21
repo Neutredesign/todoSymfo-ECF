@@ -5,15 +5,14 @@
 | Fichier/Classe           | Type de test recommandé | Outils utilisables       | Justification                           | Priorité (1-3) |
 |--------------------------|-------------------------|--------------------------|-----------------------------------------|----------------|
 | `TaskController.php`     | Intégration            | WebTestCase             | Contrôleur principal : gestion des tâches (liste, ajout, édition). Impact direct sur UX           | 1              |
-| `Task.php` (Entity)      | Unitaire               | PHPUnit                 | Entité simple, logique métier minimale, facilement testable sans dépendances externes             | 1              |
-| `User.php` (Entity)      | Unitaire               | PHPUnit                 | Entité utilisateur, gestion des rôles et mot de passe, base de la sécurité                       | 1              |
+| `Task.php`      | Unitaire               | PHPUnit                 | Entité simple, logique métier minimale, facilement testable sans dépendances externes             | 1              |
+| `User.php`      | Unitaire               | PHPUnit                 | Entité utilisateur, gestion des rôles et mot de passe, base de la sécurité                       | 1              |
 | `TaskRepository.php`     | Intégration            | KernelTestCase          | Accès à la base, requêtes Doctrine spécifiques nécessitent BDD fonctionnelle                     | 2              |
 | `UserRepository.php`     | Intégration            | KernelTestCase          | Requêtes utilisateurs et gestion sécurité, dépendances Doctrine                                 | 2              |
 | `RegistrationFormType.php`| Intégration           | WebTestCase             | Formulaire d'inscription, validation des champs et contraintes, lié à l'interface utilisateur   | 2              |
 | `TaskType.php`           | Intégration            | WebTestCase             | Formulaire tâche, validation des champs, interaction avec l'utilisateur                          | 2              |
 | `LoginFormAuthenticator.php` | Unitaire + Mock   | PHPUnit + Mock          | Composant sécurité complexe, dépend de sessions, firewalls, et providers, mocks indispensables    | 3              |
-| `TaskService.php` (si existant) | Unitaire + Mock | PHPUnit + Mock          | Logique métier complexe, interaction avec d'autres services, dépendances multiples                | 3              |
-| `SecurityController.php` (si existant) | Intégration  | WebTestCase             | Contrôleur gérant l'authentification et la gestion de session                                    | 3              |
+| `TaskService.php`  | Unitaire + Mock | PHPUnit + Mock          | Logique métier complexe, interaction avec d'autres services, dépendances multiples                | 3              |
 
 ---
 
